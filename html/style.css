@@ -3,10 +3,9 @@
 /* Autor/a: */
 /* Fecha de elaboración: */
 
-
 .mx{
     position: absolute;
-    right: 450px;
+    left: 1000px;
     z-index: 3;
     font-size: 300px;
     /*p-webkit-text-stroke: thin cadetblue ;*/
@@ -16,7 +15,7 @@
 .us{
     position: absolute;
     top: 190px;
-    left: 895px;
+    left: 500px;
     z-index: 2;
     font-size: 180px;
     /*p-webkit-text-stroke: thin cadetblue ;*/
@@ -26,7 +25,7 @@
 .jp{
     position: absolute;
     top: 190px;
-    right: 280px;
+    right: 700px;
     z-index: 4;
     font-size: 85px;
     /*p-webkit-text-stroke: thin cadetblue ;*/
@@ -36,7 +35,7 @@
 .it{
     position: absolute;
     top: 10px;
-    right: 300px;
+    right: 650px;
     z-index: 1;
     font-size: 155px;
     /*p-webkit-text-stroke: thin cadetblue ;*/
@@ -46,7 +45,7 @@
 .ko{
     position: absolute;
     top: 30px;
-    right: 400px;
+    right: 800px;
     z-index: 1;
     font-size: 50px;
     /*p-webkit-text-stroke: thin cadetblue ;*/
@@ -56,7 +55,7 @@
 .hi{
     position: absolute;
     top: 10px;
-    right: 650px;
+    left: 1050px;
     z-index: 1;
     font-size: 115px;
     /*p-webkit-text-stroke: thin cadetblue ;*/
@@ -66,7 +65,7 @@
 .ru{
     position: absolute;
     top: 80px;
-    right: 750px;
+    left: 710px;
     z-index: 1;
     font-size: 115px;
     /*p-webkit-text-stroke: thin cadetblue ;*/
@@ -76,7 +75,7 @@
 .po{
     position: absolute;
     top: 220px;
-    left: 730px;
+    right: 730px;
     z-index: 5;
     font-size: 260px;
     /*p-webkit-text-stroke: thin cadetblue ;*/
@@ -86,7 +85,7 @@
 .hw{
     position: absolute;
     top: 230px;
-    right: 850px;
+    left: 370px;
     z-index: 2;
     font-size: 335px;
     /*p-webkit-text-stroke: thin cadetblue ;*/
@@ -96,7 +95,7 @@
 .sw{
     position: absolute;
     bottom: 230px;
-    right: 220px;
+    right: 600px;
     z-index: 3;
     font-size: 145px;
     /*p-webkit-text-stroke: thin cadetblue ;*/
@@ -106,7 +105,7 @@
 .he{
     position: absolute;
     bottom: 140px;
-    right: 650px;
+    left: 1000px;
     z-index: 3;
     font-size: 145px;
     /*p-webkit-text-stroke: thin cadetblue ;*/
