@@ -1,8 +1,8 @@
 // import '../styles/formularioStyle.css'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-const Formulario = ({estudiantes,setEstudiantes,estudiante}) => {
+const Formulario = ({estudiantes,setEstudiantes,estudiante,setEstudiante}) => {
 
   const [nombre,setNombre] = useState('');
   const [carrera,setCarrera] = useState('');
@@ -10,6 +10,21 @@ const Formulario = ({estudiantes,setEstudiantes,estudiante}) => {
   const [promedio,setPromedio] = useState('');
 
   const [error, setError] = useState(false)
+
+  useEffect(() => {
+    if (Object.keys(estudiante).length > 0) {
+        setNombre(estudiante.nombre);
+        setCarrera(estudiante.carrera);
+        setSemestre(estudiante.semestre);
+        setPromedio(estudiante.promedio);
+    }
+  },[estudiante])
+
+  const generarID = () => {
+    const fecha = Date.now().toString(36);
+    const random = Math.random().toString(36).substring(2);
+    return random + fecha;
+  }
 
   const manejadorSubmit = (e) => {
     e.preventDefault();
@@ -24,11 +39,20 @@ const Formulario = ({estudiantes,setEstudiantes,estudiante}) => {
       carrera,
       semestre,
       promedio
-   }
-   setEstudiantes([...estudiantes,objetoEstudiante])
-   limpiar();
+    }
+    if (estudiante.id) {
+      limpiar();
+      objetoEstudiante.id = estudiante.id;
+      const estudiantesActualizados = estudiantes.map(estudianteState => estudianteState.id === estudiante.id ? objetoEstudiante : estudianteState)
+      setEstudiantes(estudiantesActualizados);
+    }else{
+      objetoEstudiante.id = generarID();
+      setEstudiantes([...estudiantes,objetoEstudiante])
+    }
+    limpiar();
+    setEstudiante({});
   }
-
+  
   const limpiar = () => {
     setNombre('');
     setCarrera('');
@@ -105,11 +129,11 @@ const Formulario = ({estudiantes,setEstudiantes,estudiante}) => {
             />
           </div>
             <div>
-              <button 
+              <input
               type='submit' 
-              value='Agregar estudiante'
               className="bg-[#fb8500] w-full p-2 rounded-md uppercase cursor-pointer" 
-              >Agregar Estudiante</button>
+              value={estudiante.id ? 'Actualizar estudiante' : 'Agregar Estudiante'}
+              />
             </div>
         </form>
     </div>
